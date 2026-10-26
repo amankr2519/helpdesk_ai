@@ -1,0 +1,2 @@
+ALTER TABLE "tickets" ADD COLUMN "submission_key" uuid DEFAULT gen_random_uuid() NOT NULL;--> statement-breakpoint
+CREATE UNIQUE INDEX "tickets_submission_key_unique" ON "tickets" USING btree ("submission_key");
